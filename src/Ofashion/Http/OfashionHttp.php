@@ -114,19 +114,19 @@ class OfashionHttp
         Cascade::fileConfig('src/Ofashion/Config/Log.yaml');
 
         if (200 !== $errno) {
-            Cascade::getLogger('ofashion-rpc')->info("errorCode:$errno $baseUri.$route", $logParams);
+            Cascade::getLogger('ofashion-rpc')->info("errorCode:$errno $baseUri$route", $logParams);
             return array('code' => $errno, 'msg' => $reError, 'data' => array());
         }
 
         try {
             $outPut = $this->getOutPut($service, $response);
-            Cascade::getLogger('ofashion-rpc')->info("errorCode:$errno $baseUri.$route", $logParams);
+            Cascade::getLogger('ofashion-rpc')->info("errorCode:$errno $baseUri$route", $logParams);
         } catch (ParseException $e) {
             $errno = 24000;
             $errmsg = $e->getMessage();
             $responseBody = str_replace("\n", '', $response->getBody()->__toString());
             $errors = sprintf('%s, body: %s...', $errmsg, mb_strcut($responseBody, 0, 200, 'utf-8'));
-            Cascade::getLogger('ofashion-rpc')->info("errorCode:$errno $baseUri.$route", $logParams);
+            Cascade::getLogger('ofashion-rpc')->info("errorCode:$errno $baseUri$route", $logParams);
             return array('code' => $errno, 'msg' => $errors, 'data' => array());
         }
 

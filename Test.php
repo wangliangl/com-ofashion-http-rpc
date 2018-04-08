@@ -7,17 +7,17 @@
  */
 require_once './vendor/autoload.php';
 $ser = array(
-    'baseUri'         => 'www.wlldev.com',
+    'baseUri'         => 'http://wlldev.com',
     'route'           => '/user/getShieldSpeechList',
     'format'          => 'json',     //option   def : json
-    'timeout'         => 3,         //option    def : 5
-    'connect_timeout' => 3,         //option    def : 5
+    'timeout'         => 5,         //option    def : 5
+    'connect_timeout' => 5,         //option    def : 5
     'debug'           => true,      //option    def : false
     'headers'         => array()    //option
 
 );
 
-$input = array();
+$input = array('no_check' => 1);
 
 $options = array(
     'httpMethod' => 'get',          //option   def : post
