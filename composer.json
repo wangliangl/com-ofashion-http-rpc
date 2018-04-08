@@ -1,0 +1,28 @@
+{
+    "name": "ofashion/rpc",
+    "description": "ofashion http client library",
+    "keywords": ["ofashion"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "wangliangliang",
+            "email": "liangliang.wang@mfashion.com.cn"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.6",
+        "guzzlehttp/guzzle": "~6.0",
+        "theorchard/monolog-cascade": "^0.5.0"
+
+    },
+    "autoload": {
+        "psr-4": {
+            "Ofashion\\Http\\": "src/Ofashion/Http",
+            "Ofashion\\Config\\": "src/Ofashion/Config"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.5"
+    }
+}
