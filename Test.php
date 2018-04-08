@@ -7,7 +7,7 @@
  */
 require_once './vendor/autoload.php';
 $ser = array(
-    'baseUri'         => 'http://wlldev.com',
+    'baseUri'         => 'http://wlldev.com.',
     'route'           => '/user/getShieldSpeechList',
     'format'          => 'json',     //option   def : json
     'timeout'         => 5,         //option    def : 5
@@ -21,7 +21,7 @@ $input = array('no_check' => 1);
 
 $options = array(
     'httpMethod' => 'get',          //option   def : post
-    'requestId'  => 123,           //option    def : rand
+//    'requestId'  => 123,           //option    def : rand
 );
 
 $a = new \Ofashion\Http\OfashionHttp(array('userId' => 12312));

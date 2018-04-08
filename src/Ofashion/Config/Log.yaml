@@ -8,7 +8,7 @@ handlers:
         level: DEBUG
         formatter: dashed
         processors: [memory_processor]
-        stream: php://stdout
+        stream: php://input
     info_file_handler:
         class: Monolog\Handler\StreamHandler
         level: INFO
