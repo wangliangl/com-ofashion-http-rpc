@@ -1,4 +1,5 @@
 .idea
 vendor/
+.gitignore
 composer.lock
-*.log
+src/storage/*

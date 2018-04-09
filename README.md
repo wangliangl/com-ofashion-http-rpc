@@ -1,2 +1,2 @@
 # com-ofashion
-    This is a private warehouse service, please do not use it! thank you~
+    This is a private warehouse service, feel free to use, problems need to be resolved

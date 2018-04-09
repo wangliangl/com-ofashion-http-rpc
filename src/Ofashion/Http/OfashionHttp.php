@@ -8,11 +8,11 @@
 
 namespace Ofashion\Http;
 
-use Cascade\Cascade;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Exception\RequestException;
+use Ofashion\Log\Logger;
 use Symfony\Component\Yaml\Exception\ParseException;
 
 class OfashionHttp
@@ -111,22 +111,20 @@ class OfashionHttp
             'sendId'   => $requestId
         );
 
-        Cascade::fileConfig('src/Ofashion/Config/Log.yaml');
-
         if (200 !== $errno) {
-            Cascade::getLogger('ofashionLogger')->error("errorCode:$errno url:$baseUri$route params:".json_encode($logParams, 256));
+            Logger::error("errorCode:$errno url:$baseUri$route", $logParams);
             return array('code' => $errno, 'msg' => $reError, 'data' => array());
         }
 
         try {
             $outPut = $this->getOutPut($service, $response);
-            Cascade::getLogger('ofashionLogger')->info("errorCode:$errno url:$baseUri$route", $logParams);
+            Logger::info("errorCode:$errno url:$baseUri$route", $logParams);
         } catch (ParseException $e) {
             $errno = 24000;
             $errmsg = $e->getMessage();
             $responseBody = str_replace("\n", '', $response->getBody()->__toString());
             $errors = sprintf('%s, body: %s...', $errmsg, mb_strcut($responseBody, 0, 200, 'utf-8'));
-            Cascade::getLogger('ofashionLogger')->error("errorCode:$errno url:$baseUri$route params:".json_encode($logParams, 256));
+            Logger::info("errorCode:$errno url:$baseUri$route", $logParams);
             return array('code' => $errno, 'msg' => $errors, 'data' => array());
         }
 

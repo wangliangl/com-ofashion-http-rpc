@@ -13,13 +13,13 @@
     "require": {
         "php": ">=5.6",
         "guzzlehttp/guzzle": "~6.0",
-        "theorchard/monolog-cascade": "^0.5.0"
+        "monolog/monolog": "^1.23"
 
     },
     "autoload": {
         "psr-4": {
             "Ofashion\\Http\\": "src/Ofashion/Http",
-            "Ofashion\\Config\\": "src/Ofashion/Config"
+            "Ofashion\\Log\\": "src/Ofashion/Log"
         }
     }
 }
