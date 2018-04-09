@@ -16,7 +16,7 @@
         
         );
         
-        $input = array('no_check' => 1);
+        $input = array('no_check' => 1);    //option  def : array  
         
         $options = array(
             'httpMethod' => 'get',          //option   def : post
