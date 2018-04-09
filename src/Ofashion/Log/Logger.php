@@ -29,7 +29,7 @@ class Logger
     {
         if (!self::$logger instanceof OfashionLog) {
             self::$logger = new OfashionLog('OfashionLog');
-            $handler = new StreamHandler('src/storage/logs' . date('Y-m-d') . '.log', OfashionLog::DEBUG);
+            $handler = new StreamHandler('src/storage/logs/' . date('Y-m-d') . '.log', OfashionLog::DEBUG);
             self::$logger->pushHandler($handler);
             self::$logger->pushHandler(new FirePHPHandler());
         }
