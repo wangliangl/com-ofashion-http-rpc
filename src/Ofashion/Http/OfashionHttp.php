@@ -13,7 +13,6 @@ use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Exception\RequestException;
 use Ofashion\Log\Logger;
-use Symfony\Component\Yaml\Exception\ParseException;
 
 class OfashionHttp
 {
@@ -119,7 +118,7 @@ class OfashionHttp
         try {
             $outPut = $this->getOutPut($service, $response);
             Logger::info("errorCode:$errno url:$baseUri$route", $logParams);
-        } catch (ParseException $e) {
+        } catch (\ParseError $e) {
             $errno = 24000;
             $errmsg = $e->getMessage();
             $responseBody = str_replace("\n", '', $response->getBody()->__toString());
