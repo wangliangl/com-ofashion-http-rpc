@@ -136,7 +136,7 @@ class OfashionHttp
         //build http def params
         $requestParams = array(
             'timeout'         => isset($service['timeout']) ? floatval($service['timeout']) : self::TIMEOUT,
-            'connect_timeout' => isset($service['connect_timeout']) ? floatval($service['connect_timeout']) : self::CONN_TIMEOUT,
+            'connect_timeout' => isset($service['connectTimeout']) ? floatval($service['connectTimeout']) : self::CONN_TIMEOUT,
             'debug'           => isset($service['debug']) ? $service['debug'] : false
         );
 

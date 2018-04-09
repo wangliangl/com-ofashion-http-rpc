@@ -10,7 +10,7 @@
             'route'           => '/foo/bar',
             'format'          => 'json',     //option   def : json
             'timeout'         => 1,         //option    def : 5
-            'connect_timeout' => 5,         //option    def : 5
+            'connectTimeout' => 5,         //option    def : 5
             'debug'           => true,      //option    def : false
             'headers'         => array()    //option
         
